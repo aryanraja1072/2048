@@ -109,6 +109,8 @@ public class Main {
                             }
                             j++;
                         }
+                        if(j<SIZE)
+                        tempGrid[i][curr_pos]=grid[i][j];
                     }
                 //    same=isSame(tempGrid);
                     grid=tempGrid;
@@ -121,13 +123,14 @@ public class Main {
                             if(grid[i][j]!=0 && grid[i][j]==grid[i][j-1]){
                                 tempGrid[i][curr_pos]=grid[i][j]*2;
                                 j--;
-                                curr_pos--;
                             }else if(grid[i][j]!=0){
                                 tempGrid[i][curr_pos]=grid[i][j];
-                                curr_pos--;
                             }
+                            curr_pos--;
                             j--;
                         }
+                        if(j==0)
+                        tempGrid[i][curr_pos]=grid[i][j];
                     }
                 //    same=isSame(tempGrid);
                     grid=tempGrid;
@@ -147,6 +150,9 @@ public class Main {
                             }
                             i++;
                         }
+                        if(i<SIZE)
+                        tempGrid[curr_pos][j]=grid[i][j];
+
                     }
                   //  same=isSame(tempGrid);
                     grid=tempGrid;
@@ -166,6 +172,9 @@ public class Main {
                             }
                             i--;
                         }
+                        if(i==0)
+                        tempGrid[curr_pos][j]=grid[i][j];
+
                     }
                    // same=isSame(tempGrid);
                     grid=tempGrid;
